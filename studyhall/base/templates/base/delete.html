@@ -1,0 +1,8 @@
+<h1>Delete Item</h1>
+
+<form method="POST" action="{% url 'delete-item' object.id %}">
+	{% csrf_token %}
+	<h5>Are you sure you want to delete {{ object }}?</h5>
+	<a href="{{ request.META.HTTP_REFERER }}">Go Back</a>
+	<input type="submit" value="Confirm" />
+</form>

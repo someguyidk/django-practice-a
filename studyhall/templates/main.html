@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<title>StudyHall</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+		<!-- <script src="main.js"></script> -->
+	</head>
+	<body>
+		{% include 'navbar.html' %} {% if messages %}
+		<ul class="messages">
+			{% for message in messages %}
+			<li>Error: {{ message }}</li>
+			{% endfor %}
+		</ul>
+		{% endif %}
+
+		<!-- Styling separation so the tags both below and above don't end up next to each other. No one like 3 tags next to each other like that, unever number. -->
+		{% block content %} {% endblock %}
+	</body>
+</html>
